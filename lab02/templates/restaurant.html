@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="/static/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Top Restaurant</title>
+    <!-- <link rel="stylesheet" href="style.css">  -->
 </head>
 <body>
     {% include 'includes/header.html' %}
@@ -13,9 +14,13 @@
     <main>
         <p>Search location: {{city}}</p>
         <p>Search term: {{search_term or 'None Specified'}}</p>
-        <p>Data: {{ restaurant }}</p>
         <h2>Top Restaurant:</h2> 
-        <p>Name: {{ restaurant.get('name') }}</p>
+        <h3>{{ restaurant.get('name') }}</h3>
+        <img src= "{{ restaurant.get('image_url') }}" width="300" height="300"/>
+        <p><b>Address:</b> {{ restaurant.get('display_address') }}</p>
+        <p><b>Price:</b> {{ restaurant.get('price') }}</p>
+        <p><b>Rating:</b> {{ restaurant.get('rating') }}</p>
+        <p><b># of Reviews:</b> {{ restaurant.get('review_count') }}</p>
     </main>
 </body>
 </html>
